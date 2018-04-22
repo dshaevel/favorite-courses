@@ -1,0 +1,10 @@
+12345 Discrete Math 3 Math
+24355 Calculus 3 Math
+78777 Requirements Engineering 4 CS
+39233 Security 3 CS
+88333 Java 3 CS
+99999 Physics 4 Science
+11111 Algebra 5 Math
+22222 Statistics 4 CS
+33333 Object Oriented Design 3 CS
+44444 Spanish 2 Language

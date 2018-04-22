@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('favorite-courses App', () => {
+describe('Favorite Courses App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('favorite-courses App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getNavbarText()).toEqual('Welcome to Favorite Courses 1.0.0');
   });
 });
