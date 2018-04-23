@@ -1,18 +1,28 @@
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+
+import { CoursesService } from './courses/courses.service';
 
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let httpMock: HttpTestingController;
+  const mockCourseList = require('../test/fixtures/courses.json');
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
       imports: [
-        RouterTestingModule.withRoutes([])
-      ]
+        RouterTestingModule.withRoutes([]),
+        HttpClientTestingModule
+      ],
+      providers: [CoursesService],
+      declarations: [AppComponent]
     }).compileComponents();
+    httpMock = TestBed.get(HttpTestingController);
   }));
 
   it('should create the app', async(() => {
@@ -25,5 +35,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Favorite Courses');
+  }));
+
+  it('should fetch all the courses', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.fetchCourses();
+    expect(app.courses).toEqual(mockCourseList);
   }));
 });
