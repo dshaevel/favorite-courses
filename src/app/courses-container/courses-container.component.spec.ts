@@ -5,23 +5,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { CoursesService } from '../courses/courses.service';
 
 import { CoursesComponent } from '../courses/courses.component';
-import { CoursesEditComponent } from './courses-edit.component';
+import { CoursesContainerComponent } from './courses-container.component';
 
-describe('CoursesEditComponent', () => {
-  let component: CoursesEditComponent;
-  let fixture: ComponentFixture<CoursesEditComponent>;
+describe('CoursesContainerComponent', () => {
+  let component: CoursesContainerComponent;
+  let fixture: ComponentFixture<CoursesContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
       providers: [CoursesService],
-      declarations: [CoursesEditComponent, CoursesComponent]
+      declarations: [CoursesContainerComponent, CoursesComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoursesEditComponent);
+    fixture = TestBed.createComponent(CoursesContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

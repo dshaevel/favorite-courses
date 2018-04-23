@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CourseComponent } from './courses/course/course.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CoursesEditComponent } from './courses-edit/courses-edit.component';
+import { CoursesContainerComponent } from './courses-container/courses-container.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     {
         path: 'courses',
         children: [
-            { path: '', component: CoursesEditComponent },
+            { path: '', component: CoursesContainerComponent },
             { path: ':id', component: CourseComponent },
             { path: 'add', component: CourseComponent }
         ]

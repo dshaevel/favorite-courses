@@ -13,12 +13,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoursesService } from './courses/courses.service';
 
 /* Components */
-import { SigninComponent } from './signin/signin.component';
-import { CoursesComponent } from './courses/courses.component';
-import { HomeComponent } from './home/home.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { CoursesEditComponent } from './courses-edit/courses-edit.component';
 import { CourseComponent } from './courses/course/course.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesContainerComponent } from './courses-container/courses-container.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { HomeComponent } from './home/home.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   imports: [
@@ -31,12 +31,12 @@ import { CourseComponent } from './courses/course/course.component';
   ],
   declarations: [
     AppComponent,
-    SigninComponent,
+    CourseComponent,
     CoursesComponent,
-    HomeComponent,
+    CoursesContainerComponent,
     FavoritesComponent,
-    CoursesEditComponent,
-    CourseComponent
+    HomeComponent,
+    SigninComponent
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
