@@ -16,6 +16,7 @@ import { CoursesService } from './courses/courses.service';
 import { SigninComponent } from './signin/signin.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     SigninComponent,
     CoursesComponent,
-    HomeComponent
+    HomeComponent,
+    FavoritesComponent
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
