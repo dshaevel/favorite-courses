@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { User } from './user.model';
 
@@ -13,8 +14,11 @@ export class SigninComponent {
 
   user: User = new User({});
 
+  constructor(private router: Router) {}
+
   onSigninClick() {
     console.log('SigninComponent::onSigninClick()::firstName ==>' + this.user.firstName + '<==');
     console.log('SigninComponent::onSigninClick()::lastName ==>' + this.user.lastName + '<==');
+    this.router.navigate(['/home']);
   }
 }

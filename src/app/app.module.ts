@@ -14,6 +14,8 @@ import { CoursesService } from './courses/courses.service';
 
 /* Components */
 import { SigninComponent } from './signin/signin.component';
+import { CoursesComponent } from './courses/courses.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -26,7 +28,9 @@ import { SigninComponent } from './signin/signin.component';
   ],
   declarations: [
     AppComponent,
-    SigninComponent
+    SigninComponent,
+    CoursesComponent,
+    HomeComponent
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]

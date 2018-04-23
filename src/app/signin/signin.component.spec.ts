@@ -1,14 +1,20 @@
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SigninComponent } from './signin.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('SigninComponent', () => {
+describe('SigninComponent', () => {
   let component: SigninComponent;
   let fixture: ComponentFixture<SigninComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SigninComponent ]
+      imports: [
+        RouterTestingModule.withRoutes([]),
+        FormsModule
+      ],
+      declarations: [SigninComponent]
     })
     .compileComponents();
   }));
