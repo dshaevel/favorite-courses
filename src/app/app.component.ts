@@ -5,7 +5,7 @@ import { CoursesService } from './courses/courses.service';
 import { Course } from './courses/course.model';
 
 @Component({
-  selector: 'app-root',
+  selector: 'favorite-courses-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     console.log('AppComponent::ngOnInit()');
     this.fetchCourses();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/signin']);
   }
 
   fetchCourses() {

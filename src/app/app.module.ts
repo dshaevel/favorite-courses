@@ -1,5 +1,6 @@
 /* Third-party */
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
@@ -12,19 +13,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoursesService } from './courses/courses.service';
 
 /* Components */
-import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   imports: [
     /* Third-party */
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     /* Modules */
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    LoginComponent
+    SigninComponent
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
