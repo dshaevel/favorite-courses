@@ -4,24 +4,24 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { CoursesService } from '../courses/courses.service';
 
-import { HomeComponent } from './home.component';
 import { CoursesComponent } from '../courses/courses.component';
+import { CoursesEditComponent } from './courses-edit.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('CoursesEditComponent', () => {
+  let component: CoursesEditComponent;
+  let fixture: ComponentFixture<CoursesEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
       providers: [CoursesService],
-      declarations: [HomeComponent, CoursesComponent]
+      declarations: [CoursesEditComponent, CoursesComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(CoursesEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

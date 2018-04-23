@@ -1,0 +1,18 @@
+.container {
+    margin-top: 25px;
+}
+
+.form-group {
+    margin-top: 5px;
+    padding: 5px 0 5px 0;
+    border: 1px solid #eeeeee
+}
+
+.form-row {
+    margin-bottom: 5px;
+}
+
+.separator {
+    padding-top: 5px;
+    border-top: 1px solid #eeeeee;
+}

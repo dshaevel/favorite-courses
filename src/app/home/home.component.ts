@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/favorites']);
   }
 
+  onYesAddOrEditClick() {
+    this.router.navigate(['/courses']);
+  }
+
 }

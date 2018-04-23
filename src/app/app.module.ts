@@ -17,6 +17,8 @@ import { SigninComponent } from './signin/signin.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { CoursesEditComponent } from './courses-edit/courses-edit.component';
+import { CourseComponent } from './courses/course/course.component';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { FavoritesComponent } from './favorites/favorites.component';
     SigninComponent,
     CoursesComponent,
     HomeComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    CoursesEditComponent,
+    CourseComponent
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent]
