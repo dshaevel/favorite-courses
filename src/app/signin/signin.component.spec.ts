@@ -14,8 +14,8 @@ describe('SigninComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule.withRoutes([]),
-        FormsModule
+        FormsModule,
+        RouterTestingModule.withRoutes([])
       ],
       providers: [SigninService],
       declarations: [SigninComponent]

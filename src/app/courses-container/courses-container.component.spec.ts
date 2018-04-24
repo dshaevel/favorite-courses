@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -6,6 +8,7 @@ import { CoursesService } from '../courses/courses.service';
 
 import { CoursesComponent } from '../courses/courses.component';
 import { CoursesContainerComponent } from './courses-container.component';
+import { SearchPipe } from '../search.pipe';
 
 describe('CoursesContainerComponent', () => {
   let component: CoursesContainerComponent;
@@ -13,9 +16,13 @@ describe('CoursesContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule.withRoutes([])],
+      imports: [
+        FormsModule,
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])
+      ],
       providers: [CoursesService],
-      declarations: [CoursesContainerComponent, CoursesComponent]
+      declarations: [CoursesContainerComponent, CoursesComponent, SearchPipe]
     })
     .compileComponents();
   }));
