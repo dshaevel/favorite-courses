@@ -5,3 +5,15 @@
 .col-actions {
     padding: 0.5rem 0.75rem 0 0.75rem
 }
+
+.table-header {
+    padding-top: 7px;
+}
+
+.form-header {
+    padding-top: 6px;
+}
+
+.search-courses {
+    margin-bottom: 5px;
+}

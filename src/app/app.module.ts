@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 import { SummaryComponent } from './summary/summary.component';
 
+import { SearchPipe } from './search.pipe';
 import { TrimPipe } from './trim.pipe';
 
 @NgModule({
@@ -42,6 +43,7 @@ import { TrimPipe } from './trim.pipe';
     HomeComponent,
     SigninComponent,
     SummaryComponent,
+    SearchPipe,
     TrimPipe
   ],
   providers: [CoursesService, CoursesResolver, SigninService],

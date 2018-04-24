@@ -1,5 +1,16 @@
 <div class="container">
-  <h4>Available Courses:</h4>
+  <div *ngIf="!showActions" class="table-header">
+    <h4>Available Courses:</h4>
+  </div>
+  <form *ngIf="!!showActions" class="form-inline">
+    <div class="form-header">
+      <h4>Available Courses:</h4>
+    </div>
+    <div class="col-sm-7"></div>
+    <div class="search-courses">
+      <input id="searchCourses" name="searchCourses" class="form-control" aria-label="Search Courses" placeholder="Search Courses">
+    </div>
+  </form>
   <table class="table table-striped table-hover">
     <thead>
       <tr>
