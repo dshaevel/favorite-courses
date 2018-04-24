@@ -17,9 +17,9 @@ export class SearchPipe implements PipeTransform {
   }
 
   isIndexOf(item, search, property): boolean {
-    return item[property].toLowercase().indexOf(search.toLowercase()) !== -1 ||
+    return item[property].toString().toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
       item.children && item.children.length && item.children.filter(child => {
-        return child[property].toLowercase().indexOf(search.toLowercase()) !== -1;
+        return child[property].toLowerCase().indexOf(search.toLowerCase()) !== -1;
       }).length > 0;
   }
 }
