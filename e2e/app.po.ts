@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getNavbarText() {
-    return element(by.css('favorite-courses-root nav a')).getText();
+    return element(by.css('favorite-courses-root nav div.navbar-brand')).getText();
   }
 }

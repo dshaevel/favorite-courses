@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { CoursesService } from './courses/courses.service';
+import { SigninService } from './signin/signin.service';
 
 import { AppComponent } from './app.component';
 
@@ -19,7 +20,7 @@ describe('AppComponent', () => {
         RouterTestingModule.withRoutes([]),
         HttpClientTestingModule
       ],
-      providers: [CoursesService],
+      providers: [CoursesService, SigninService],
       declarations: [AppComponent]
     }).compileComponents();
     httpMock = TestBed.get(HttpTestingController);
