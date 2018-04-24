@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Length (hours)</th>
         <th>Subject</th>
+        <th *ngIf="!!showActions">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,9 @@
         <td>{{ course.name }}</td>
         <td>{{ course.length }}</td>
         <td>{{ course.subject }}</td>
+        <td *ngIf="!!showActions" class="col-actions">
+          <button class="btn btn-sm btn-outline-primary" [routerLink]="['.', course.id]">Edit course</button>
+        </td>
       </tr>
     </tbody>
   </table>

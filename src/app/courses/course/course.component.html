@@ -2,44 +2,49 @@
   <h4>Add course:</h4>
     <form class="form-group">
         <div class="form-row">
-          <div class="col-sm-3"></div>
-          <label class="col-sm-2">ID:</label>
-          <div class="col-sm-7">
-            <input>
+          <div class="col-sm-2"></div>
+          <label for="courseId" class="col-sm-2 col-form-label">ID:</label>
+          <div class="col-sm-6">
+            <input id="courseId" name="courseId" class="form-control" type="text" [(ngModel)]="course.id">
           </div>
+          <div class="col-sm-2"></div>
         </div>
         <div class="form-row">
-          <div class="col-sm-3"></div>
-          <label class="col-sm-2">Name:</label>
-          <div class="col-sm-7">
-            <input>
+          <div class="col-sm-2"></div>
+          <label for="courseName" class="col-sm-2 col-form-label">Name:</label>
+          <div class="col-sm-6">
+            <input id="courseName" name="courseName" class="form-control" type="text" [(ngModel)]="course.name">
           </div>
+          <div class="col-sm-2"></div>
         </div>
         <div class="form-row">
-          <div class="col-sm-3"></div>
-          <label class="col-sm-2">Length (hours):</label>
-          <div class="col-sm-7">
-            <input>
+          <div class="col-sm-2"></div>
+          <label for="courseLength" class="col-sm-2 col-form-label">Length (hours):</label>
+          <div class="col-sm-6">
+            <input id="courseLength" name="courseLength" class="form-control" type="text" [(ngModel)]="course.length">
           </div>
+          <div class="col-sm-2"></div>
         </div>
         <div class="form-row">
-          <div class="col-sm-3"></div>
-          <label class="col-sm-2">Subject:</label>
-          <div class="col-sm-7">
-            <input>
+          <div class="col-sm-2"></div>
+          <label for="courseSubject" class="col-sm-2 col-form-label">Subject:</label>
+          <div class="col-sm-6">
+            <input id="courseSubject" name="courseSubject" class="form-control" type="text" [(ngModel)]="course.subject">
           </div>
+          <div class="col-sm-2"></div>
         </div>
         <br/>
         <div class="separator"></div>
         <div class="row">
-          <div class="col-sm-3"></div>
+          <div class="col-sm-4"></div>
           <div class="col-sm-1">
             <button class="btn btn-primary">Save</button>
           </div>
           <div class="col-sm-1"></div>
-          <div class="col-sm-7">
+          <div class="col-sm-1">
             <button class="btn btn-secondary" [routerLink]="['..']">Cancel</button>
           </div>
+          <div class="col-sm-5"></div>
         </div>
       </form>
 </div>

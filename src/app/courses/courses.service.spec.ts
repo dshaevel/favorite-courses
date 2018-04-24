@@ -27,4 +27,9 @@ describe('CoursesService', () => {
       expect(JSON.stringify(theCourses)).toEqual(JSON.stringify(mockCourseList));
     });
   });
+
+  it('should return the correct course when getById is called', () => {
+    const theCourse = coursesService.getById('12345');
+    expect(JSON.stringify(theCourse)).toEqual(JSON.stringify(mockCourseList[0]));
+  });
 });

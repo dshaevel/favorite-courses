@@ -7,13 +7,19 @@ declare var require: any;
 
 @Injectable()
 export class CoursesService {
-  courseList = require('../../test/fixtures/courses.json');
+  coursesList = require('../../test/fixtures/courses.json');
   url = 'http://localhost:3000/v1/courses';
 
   constructor(private http: HttpClient) {}
 
   getAll() {
     // return this.http.get(this.url);
-    return Observable.create(observer => observer.next(this.courseList));
+    return Observable.create(observer => observer.next(this.coursesList));
+  }
+
+  getById(id: string) {
+    return this.coursesList.find(course => {
+      return '' + course['id'] === id;
+    });
   }
 }

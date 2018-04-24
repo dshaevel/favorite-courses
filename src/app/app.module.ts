@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 /* Services */
+import { CoursesResolver } from './courses/courses-resolver.service';
 import { CoursesService } from './courses/courses.service';
 
 /* Components */
@@ -38,7 +39,7 @@ import { SigninComponent } from './signin/signin.component';
     HomeComponent,
     SigninComponent
   ],
-  providers: [CoursesService],
+  providers: [CoursesService, CoursesResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
