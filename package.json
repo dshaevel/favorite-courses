@@ -1,15 +1,15 @@
 {
-    "name": "favorite-courses",
-    "version": "1.0.0",
-    "license": "MIT",
-    "scripts": {
-        "server": "nodemon server/app.js --ignore tests",
-        "client": "npm run start --prefix client",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
-    },
-    "dependencies": {
-        "concurrently": "^3.5.1",
-        "express": "^4.16.3",
-        "nodemon": "^1.17.3"
-    }
+  "name": "favorite-courses",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon server/app.js --ignore tests",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.3"
+  }
 }

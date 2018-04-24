@@ -18,7 +18,6 @@ export class CoursesService {
   }
 
   getAll() {
-    // return this.http.get(this.url);
     return Observable.create(observer => observer.next(this.availableCoursesList));
   }
 
@@ -35,17 +34,19 @@ export class CoursesService {
   }
 
   private populateCourseList() {
-    this.courseListFromFile = require('../../test/fixtures/courses.json');
+    this.http.get(this.url).subscribe((courses: Array<any>) => {
+      this.courseListFromFile = courses;
 
-    this.courseListFromFile.forEach(course => {
-      const courseClone: Course = new Course({});
+      this.courseListFromFile.forEach(course => {
+        const courseClone: Course = new Course({});
 
-      courseClone.id = course.id;
-      courseClone.name = course.name;
-      courseClone.length = course.length;
-      courseClone.subject = course.subject;
+        courseClone.id = course.id;
+        courseClone.name = course.name;
+        courseClone.length = course.length;
+        courseClone.subject = course.subject;
 
-      this.availableCoursesList.push(courseClone);
+        this.availableCoursesList.push(courseClone);
+      });
     });
   }
 }
