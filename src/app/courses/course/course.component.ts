@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Data } from '@angular/router';
 
+import { CoursesService } from '../courses.service';
 import { Course } from '../course.model';
 
 @Component({
@@ -12,17 +13,20 @@ export class CourseComponent implements OnInit {
   course: Course;
   courseCopy: Course = new Course({});
   formHeader: string;
+  isCreate = true;
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private coursesService: CoursesService
   ) {}
 
   ngOnInit() {
     this.route.data.subscribe(
       (data: Data) => {
         this.course = data['course'] || new Course({});
-        this.formHeader = this.course.id ? 'Edit course:' : 'Add course:';
+        this.isCreate = this.course.id ? false : true;
+        this.formHeader = this.isCreate ? 'Add course:' : 'Edit course:';
 
         // clone the course so that the course data can be reset
         this.courseCopy.id = this.course.id;
@@ -42,6 +46,11 @@ export class CourseComponent implements OnInit {
     if (typeof this.course.length === 'string') {
       this.course.length = Number(this.course.length) * 1;
     }
+
+    if (this.isCreate) {
+      this.coursesService.availableCoursesList.push(this.course);
+    }
+
     this.router.navigate(['/courses']);
   }
 
