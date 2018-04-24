@@ -1,11 +1,7 @@
-<favorite-courses-list show-actions="true" show-edit-action="true"></favorite-courses-list>
-<hr/>
 <div class="container">
   <h4>Additional actions:</h4>
   <button class="btn btn-lg btn-primary" [routerLink]="['.', 'add']" [queryParams]="{create: 'true'}">Add course</button>
   <button class="btn btn-lg btn-primary" [routerLink]="['../home']">List courses</button>
 </div>
-<div class="container">
-  <input type="text">
-  <button class="btn btn-lg btn-secondary">Search courses</button>
-</div>
+<hr/>
+<favorite-courses-list show-actions="true" show-edit-action="true"></favorite-courses-list>
