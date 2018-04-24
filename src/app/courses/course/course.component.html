@@ -1,11 +1,16 @@
 <div class="container">
   <h4>{{ formHeader }}</h4>
-    <form class="form-group">
+    <form class="form-group" #courseForm="ngForm">
         <div class="form-row">
           <div class="col-sm-2"></div>
           <label for="courseId" class="col-sm-2 col-form-label">ID:</label>
           <div class="col-sm-6">
-            <input id="courseId" name="courseId" class="form-control" type="text" [(ngModel)]="course.id">
+            <input id="courseId" name="courseId" class="form-control" type="text" [(ngModel)]="course.id" #courseId="ngModel" required maxlength="5" pattern="\d{5}">
+            <div *ngIf="courseId.errors && (courseId.dirty || courseId.touched)" class="validation-container">
+              <span class="text-danger" [hidden]="!courseId.errors.required">ID is required</span>
+              <span class="text-danger" [hidden]="!courseId.errors.pattern">ID must be a 5-digit number</span>
+              <span class="help-block"></span>
+            </div>
           </div>
           <div class="col-sm-2"></div>
         </div>
@@ -13,7 +18,11 @@
           <div class="col-sm-2"></div>
           <label for="courseName" class="col-sm-2 col-form-label">Name:</label>
           <div class="col-sm-6">
-            <input id="courseName" name="courseName" class="form-control" type="text" [(ngModel)]="course.name">
+            <input id="courseName" name="courseName" class="form-control" type="text" [(ngModel)]="course.name" #courseName="ngModel" required>
+            <div *ngIf="courseName.errors && (courseName.dirty || courseName.touched)" class="validation-container">
+                <span class="text-danger" [hidden]="!courseName.errors.required">Name is required</span>
+                <span class="help-block"></span>
+              </div>
           </div>
           <div class="col-sm-2"></div>
         </div>
@@ -21,7 +30,12 @@
           <div class="col-sm-2"></div>
           <label for="courseLength" class="col-sm-2 col-form-label">Length (hours):</label>
           <div class="col-sm-6">
-            <input id="courseLength" name="courseLength" class="form-control" type="text" [(ngModel)]="course.length">
+            <input id="courseLength" name="courseLength" class="form-control" type="text" [(ngModel)]="course.length" #courseLength="ngModel" required pattern="^[0-9]*$">
+            <div *ngIf="courseLength.errors && (courseLength.dirty || courseLength.touched)" class="validation-container">
+                <span class="text-danger" [hidden]="!courseLength.errors.required">Length is required</span>
+                <span class="text-danger" [hidden]="!courseLength.errors.pattern">Length must be a number</span>
+                <span class="help-block"></span>
+              </div>
           </div>
           <div class="col-sm-2"></div>
         </div>
@@ -29,7 +43,11 @@
           <div class="col-sm-2"></div>
           <label for="courseSubject" class="col-sm-2 col-form-label">Subject:</label>
           <div class="col-sm-6">
-            <input id="courseSubject" name="courseSubject" class="form-control" type="text" [(ngModel)]="course.subject">
+            <input id="courseSubject" name="courseSubject" class="form-control" type="text" [(ngModel)]="course.subject" #courseSubject="ngModel" required>
+            <div *ngIf="courseSubject.errors && (courseSubject.dirty || courseSubject.touched)" class="validation-container">
+                <span class="text-danger" [hidden]="!courseSubject.errors.required">Subject is required</span>
+                <span class="help-block"></span>
+              </div>
           </div>
           <div class="col-sm-2"></div>
         </div>
@@ -38,7 +56,7 @@
         <div class="row">
           <div class="col-sm-4"></div>
           <div class="col-sm-1">
-            <button class="btn btn-primary" (click)="onSaveClick()">Save</button>
+            <button class="btn btn-primary" (click)="onSaveClick()" [disabled]="!courseForm.valid">Save</button>
           </div>
           <div class="col-sm-1"></div>
           <div class="col-sm-1">

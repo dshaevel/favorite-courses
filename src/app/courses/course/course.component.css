@@ -16,3 +16,14 @@
     padding-top: 5px;
     border-top: 1px solid #eeeeee;
 }
+
+.validation-container {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
