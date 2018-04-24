@@ -13,7 +13,7 @@ lineReader.on('line', line => {
     const rawLineOne = line.match(/\d{5}(.*)/)[1];
     const courseSubject = rawLineOne.match(/\w+$/).toString().trim();
     const rawLineTwo = rawLineOne.match(/[^ ]+\s+[^ ]+$/)[0];
-    const courseLength = rawLineTwo.match(/^\w/);
+    const courseLength = rawLineTwo.match(/^\w/).toString().trim();
     const courseName = rawLineOne.match(/^.*(?=\d)/).toString().trim();
     // console.log('line ==>' + line + '<==');
     // console.log('---');
