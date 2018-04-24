@@ -1,7 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FavoritesComponent } from './favorites.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { CoursesService } from '../courses/courses.service';
+
+import { CoursesComponent } from '../courses/courses.component';
+import { FavoritesComponent } from './favorites.component';
+import { TrimPipe } from '../trim.pipe';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;
@@ -9,8 +14,12 @@ describe('FavoritesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule.withRoutes([])],
-      declarations: [ FavoritesComponent ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])
+      ],
+      providers: [CoursesService],
+      declarations: [CoursesComponent, FavoritesComponent, TrimPipe]
     })
     .compileComponents();
   }));

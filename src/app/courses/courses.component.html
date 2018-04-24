@@ -16,8 +16,11 @@
         <td>{{ course.name }}</td>
         <td>{{ course.length }}</td>
         <td>{{ course.subject }}</td>
-        <td *ngIf="!!showActions" class="col-actions">
+        <td *ngIf="!!showActions && !!showEditAction" class="col-actions">
           <button class="btn btn-sm btn-outline-primary" [routerLink]="['.', course.id]">Edit course</button>
+        </td>
+        <td *ngIf="!!showActions && !!showFavoriteAction" class="col-actions">
+          <button class="btn btn-sm btn-outline-primary" (click)="onAddToFavoritesClick(course.id)" [disabled]="isFavorite(course.id)">Add to favorites</button>
         </td>
       </tr>
     </tbody>

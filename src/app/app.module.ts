@@ -21,6 +21,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
 
+import { TrimPipe } from './trim.pipe';
+
 @NgModule({
   imports: [
     /* Third-party */
@@ -37,7 +39,8 @@ import { SigninComponent } from './signin/signin.component';
     CoursesContainerComponent,
     FavoritesComponent,
     HomeComponent,
-    SigninComponent
+    SigninComponent,
+    TrimPipe
   ],
   providers: [CoursesService, CoursesResolver],
   bootstrap: [AppComponent]

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { CoursesComponent } from '../courses/courses.component';
 
 @Component({
   selector: 'favorite-courses-add-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @ViewChild(CoursesComponent) coursesComponent: CoursesComponent;
 
 }

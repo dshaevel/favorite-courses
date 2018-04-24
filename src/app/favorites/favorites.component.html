@@ -1,5 +1,10 @@
-<div class="container">
-  <p>
-    favorites works!
-  </p>
+<div class="container center">
+  <h4>Please add courses to your favorites list.</h4>
+  <button class="btn btn-lg btn-primary">Done adding favorites</button>
 </div>
+<hr/>
+<div class="container">
+  <h4>Favorites List: {{ coursesComponent.favoriteCourses | json | trim }}</h4>
+</div>
+<hr/>
+<favorite-courses-list show-actions="true" show-favorite-action="true"></favorite-courses-list>
