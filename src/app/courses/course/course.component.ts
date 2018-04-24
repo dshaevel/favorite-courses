@@ -10,6 +10,7 @@ import { Course } from '../course.model';
 })
 export class CourseComponent implements OnInit {
   course: Course;
+  courseCopy: Course = new Course({});
 
   constructor(
     private router: Router,
@@ -20,8 +21,26 @@ export class CourseComponent implements OnInit {
     this.route.data.subscribe(
       (data: Data) => {
         this.course = data['course'] || new Course({});
+
+        // clone the course so that the course data can be reset
+        this.courseCopy.id = this.course.id;
+        this.courseCopy.name = this.course.name;
+        this.courseCopy.length = this.course.length;
+        this.courseCopy.subject = this.course.subject;
       }
     );
+  }
+
+  onSaveClick() {
+    // validate the form
+    this.router.navigate(['courses']);
+  }
+
+  onCancelClick() {
+    this.course.id = this.courseCopy.id;
+    this.course.name = this.courseCopy.name;
+    this.course.length = this.courseCopy.length;
+    this.course.subject = this.courseCopy.subject;
   }
 
 }
