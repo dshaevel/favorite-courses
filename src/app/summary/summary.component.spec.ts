@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CoursesService } from '../courses/courses.service';
+import { SigninService } from '../signin/signin.service';
 
 import { SummaryComponent } from './summary.component';
 import { TrimPipe } from '../trim.pipe';
@@ -17,7 +18,7 @@ describe('SummaryComponent', () => {
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([])
       ],
-      providers: [CoursesService],
+      providers: [CoursesService, SigninService],
       declarations: [SummaryComponent, TrimPipe]
     })
     .compileComponents();

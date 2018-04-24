@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from './user.model';
+import { SigninService } from './signin.service';
 
 @Component({
   selector: 'favorite-courses-signin',
@@ -12,9 +13,7 @@ import { User } from './user.model';
 export class SigninComponent {
   @Output() userSave: EventEmitter<any> = new EventEmitter();
 
-  user: User = new User({});
-
-  constructor(private router: Router) {}
+  constructor(private router: Router, private signinService: SigninService) {}
 
   onSigninClick() {
     // console.log('SigninComponent::onSigninClick()::firstName ==>' + this.user.firstName + '<==');

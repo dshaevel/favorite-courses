@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 /* Services */
 import { CoursesResolver } from './courses/courses-resolver.service';
 import { CoursesService } from './courses/courses.service';
+import { SigninService } from './signin/signin.service';
 
 /* Components */
 import { CourseComponent } from './courses/course/course.component';
@@ -20,9 +21,9 @@ import { CoursesContainerComponent } from './courses-container/courses-container
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
+import { SummaryComponent } from './summary/summary.component';
 
 import { TrimPipe } from './trim.pipe';
-import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   imports: [
@@ -41,10 +42,10 @@ import { SummaryComponent } from './summary/summary.component';
     FavoritesComponent,
     HomeComponent,
     SigninComponent,
-    TrimPipe,
-    SummaryComponent
+    SummaryComponent,
+    TrimPipe
   ],
-  providers: [CoursesService, CoursesResolver],
+  providers: [CoursesService, CoursesResolver, SigninService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

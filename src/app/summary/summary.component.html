@@ -3,7 +3,7 @@
 </div>
 <hr/>
 <div class="container">
-  <p>FirstName LastName has signed up for {{ coursesService.favoriteCoursesList.length }} courses with {{ totalCourseHours }} credits.</p>
+  <p>{{ signinService.user.firstName }} {{ signinService.user.lastName }} has signed up for {{ coursesService.favoriteCoursesList.length }} courses with {{ totalCourseHours }} credits.</p>
   <br/>
   <button class="btn-lg btn-primary" (click)="onSignoutClick()" [routerLink]="['..']">Sign out</button>
 </div>

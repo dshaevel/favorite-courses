@@ -1,8 +1,11 @@
 import { FormsModule } from '@angular/forms';
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { SigninService } from './signin.service';
 
 import { SigninComponent } from './signin.component';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -14,6 +17,7 @@ describe('SigninComponent', () => {
         RouterTestingModule.withRoutes([]),
         FormsModule
       ],
+      providers: [SigninService],
       declarations: [SigninComponent]
     })
     .compileComponents();

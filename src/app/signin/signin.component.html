@@ -3,7 +3,7 @@
     <h1 class="h4 mb-3 font-weight-normal">Please sign in</h1>
     <div>
       <label for="signinFirstName" class="sr-only">First name</label>
-      <input id="signinFirstName" name="signinFirstName" class="form-control" type="text" [(ngModel)]="user.firstName" #firstName="ngModel" placeholder="First name" required autofocus>
+      <input id="signinFirstName" name="signinFirstName" class="form-control" type="text" [(ngModel)]="signinService.user.firstName" #firstName="ngModel" placeholder="First name" required autofocus>
       <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="validation-container">
         <span class="text-danger" [hidden]="!firstName.errors.required">First name is required</span>
         <span class="help-block"></span>
@@ -11,7 +11,7 @@
     </div>
     <div>
       <label for="signinLastName" class="sr-only">Last name</label>
-      <input id="signinLastName" name="signinLastName" class="form-control" type="text" [(ngModel)]="user.lastName" #lastName="ngModel" placeholder="Last name" required>
+      <input id="signinLastName" name="signinLastName" class="form-control" type="text" [(ngModel)]="signinService.user.lastName" #lastName="ngModel" placeholder="Last name" required>
       <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="validation-container">
         <span class="text-danger" [hidden]="!lastName.errors.required">Last name is required</span>
         <span class="help-block"></span>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CoursesService } from '../courses/courses.service';
+import { SigninService } from '../signin/signin.service';
+
 import { Course } from '../courses/course.model';
 
 @Component({
@@ -11,7 +13,7 @@ import { Course } from '../courses/course.model';
 export class SummaryComponent implements OnInit {
   totalCourseHours = 0;
 
-  constructor(private coursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService, private signinService: SigninService) {}
 
   ngOnInit() {
     this.coursesService.favoriteCoursesList.forEach(courseId => {
@@ -24,6 +26,7 @@ export class SummaryComponent implements OnInit {
 
   onSignoutClick() {
     this.coursesService.reset();
+    this.signinService.reset();
   }
 
 }
