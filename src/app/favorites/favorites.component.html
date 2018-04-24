@@ -4,7 +4,7 @@
 </div>
 <hr/>
 <div class="container">
-  <h4>Favorites List: {{ coursesComponent.favoriteCourses | json | trim }}</h4>
+  <h4>Favorites List: {{ coursesService.favoriteCoursesList | json | trim }}</h4>
 </div>
 <hr/>
 <favorite-courses-list show-actions="true" show-favorite-action="true"></favorite-courses-list>

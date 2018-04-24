@@ -36,11 +36,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Favorite Courses');
   }));
-
-  it('should fetch all the courses', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    app.fetchCourses();
-    expect(app.courses).toEqual(mockCourseList);
-  }));
 });

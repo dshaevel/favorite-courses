@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CoursesService } from './courses.service';
 import { Course } from './course.model';
 
@@ -7,26 +7,19 @@ import { Course } from './course.model';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent {
   @Input('show-actions') showActions = false;
   @Input('show-edit-action') showEditAction = false;
   @Input('show-favorite-action') showFavoriteAction = false;
 
-  courses: Course[];
-  favoriteCourses = new Array<number>();
-
   constructor(private coursesService: CoursesService) { }
 
-  ngOnInit() {
-    this.courses = this.coursesService.coursesList;
-  }
-
   onAddToFavoritesClick(id) {
-    this.favoriteCourses.push(id);
+    this.coursesService.favoriteCoursesList.push(id);
   }
 
   isFavorite(id): boolean {
-    return id === this.favoriteCourses.find(courseId => {
+    return id === this.coursesService.favoriteCoursesList.find(courseId => {
       return courseId === id;
     });
   }

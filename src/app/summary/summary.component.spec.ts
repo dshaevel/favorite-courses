@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+
+import { CoursesService } from '../courses/courses.service';
 
 import { SummaryComponent } from './summary.component';
+import { TrimPipe } from '../trim.pipe';
 
 describe('SummaryComponent', () => {
   let component: SummaryComponent;
@@ -8,7 +13,12 @@ describe('SummaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SummaryComponent ]
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule.withRoutes([])
+      ],
+      providers: [CoursesService],
+      declarations: [SummaryComponent, TrimPipe]
     })
     .compileComponents();
   }));

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CoursesResolver } from './courses/courses-resolver.service';
 
+import { AppComponent } from './app.component';
 import { CourseComponent } from './courses/course/course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesContainerComponent } from './courses-container/courses-container.component';
@@ -12,7 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SummaryComponent } from './summary/summary.component';
 
 const appRoutes: Routes = [
-    { path: '', component: SigninComponent},
+    { path: '', component: AppComponent },
     {
         path: 'courses',
         children: [

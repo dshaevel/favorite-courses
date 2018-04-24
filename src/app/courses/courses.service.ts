@@ -7,19 +7,45 @@ declare var require: any;
 
 @Injectable()
 export class CoursesService {
-  coursesList = require('../../test/fixtures/courses.json');
+  courseListFromFile = Array<any>();
+  availableCoursesList = Array<any>();
+  favoriteCoursesList = Array<number>();
+
   url = 'http://localhost:3000/v1/courses';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.populateCourseList();
+  }
 
   getAll() {
     // return this.http.get(this.url);
-    return Observable.create(observer => observer.next(this.coursesList));
+    return Observable.create(observer => observer.next(this.availableCoursesList));
   }
 
   getById(id: string) {
-    return this.coursesList.find(course => {
+    return this.availableCoursesList.find(course => {
       return '' + course['id'] === id;
+    });
+  }
+
+  reset() {
+    this.availableCoursesList.length = 0;
+    this.favoriteCoursesList.length = 0;
+    this.populateCourseList();
+  }
+
+  private populateCourseList() {
+    this.courseListFromFile = require('../../test/fixtures/courses.json');
+
+    this.courseListFromFile.forEach(course => {
+      const courseClone: Course = new Course({});
+
+      courseClone.id = course.id;
+      courseClone.name = course.name;
+      courseClone.length = course.length;
+      courseClone.subject = course.subject;
+
+      this.availableCoursesList.push(courseClone);
     });
   }
 }

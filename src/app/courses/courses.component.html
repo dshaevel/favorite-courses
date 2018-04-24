@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let course of courses">
+      <tr *ngFor="let course of coursesService.availableCoursesList">
         <td>{{ course.id }}</td>
         <td>{{ course.name }}</td>
         <td>{{ course.length }}</td>

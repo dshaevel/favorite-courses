@@ -12,20 +12,12 @@ import { Course } from './courses/course.model';
 export class AppComponent implements OnInit {
   title = 'Favorite Courses';
   version = '1.0.0';
-  courses: any;
 
   constructor(private router: Router, private coursesService: CoursesService) {}
 
   ngOnInit() {
-    this.fetchCourses();
+    this.coursesService.getAll();
     this.router.navigate(['/signin']);
   }
 
-  fetchCourses() {
-    this.coursesService.getAll()
-      .subscribe(theCourses => {
-        this.courses = theCourses;
-        // console.log('courses ==>' + JSON.stringify(this.courses, null, 2) + '<==');
-      });
-  }
 }

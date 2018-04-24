@@ -35,7 +35,13 @@ export class CourseComponent implements OnInit {
 
   onSaveClick() {
     // TODO: validate the form
-    this.course.id = this.course.id.padStart(5, '0');
+
+    if (typeof this.course.id === 'string') {
+      this.course.id = this.course.id.padStart(5, '0');
+    }
+    if (typeof this.course.length === 'string') {
+      this.course.length = Number(this.course.length) * 1;
+    }
     this.router.navigate(['/courses']);
   }
 
