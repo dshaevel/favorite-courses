@@ -11,6 +11,7 @@ import { Course } from '../course.model';
 export class CourseComponent implements OnInit {
   course: Course;
   courseCopy: Course = new Course({});
+  formHeader: string;
 
   constructor(
     private router: Router,
@@ -21,6 +22,7 @@ export class CourseComponent implements OnInit {
     this.route.data.subscribe(
       (data: Data) => {
         this.course = data['course'] || new Course({});
+        this.formHeader = this.course.id ? 'Edit course:' : 'Add course:';
 
         // clone the course so that the course data can be reset
         this.courseCopy.id = this.course.id;

@@ -17,8 +17,8 @@ export class SigninComponent {
   constructor(private router: Router) {}
 
   onSigninClick() {
-    console.log('SigninComponent::onSigninClick()::firstName ==>' + this.user.firstName + '<==');
-    console.log('SigninComponent::onSigninClick()::lastName ==>' + this.user.lastName + '<==');
+    // console.log('SigninComponent::onSigninClick()::firstName ==>' + this.user.firstName + '<==');
+    // console.log('SigninComponent::onSigninClick()::lastName ==>' + this.user.lastName + '<==');
     this.router.navigate(['/home']);
   }
 }

@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   constructor(private router: Router, private coursesService: CoursesService) {}
 
   ngOnInit() {
-    console.log('AppComponent::ngOnInit()');
     this.fetchCourses();
     this.router.navigate(['/signin']);
   }
@@ -26,7 +25,7 @@ export class AppComponent implements OnInit {
     this.coursesService.getAll()
       .subscribe(theCourses => {
         this.courses = theCourses;
-        console.log('courses ==>' + JSON.stringify(this.courses, null, 2) + '<==');
+        // console.log('courses ==>' + JSON.stringify(this.courses, null, 2) + '<==');
       });
   }
 }
