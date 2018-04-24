@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { CoursesComponent } from '../courses/courses.component';
 
 @Component({
@@ -8,6 +10,12 @@ import { CoursesComponent } from '../courses/courses.component';
 })
 export class FavoritesComponent {
 
+  constructor(private router: Router) {}
+
   @ViewChild(CoursesComponent) coursesComponent: CoursesComponent;
 
+  onDoneClick() {
+    console.log('FavoritesComponent::onDoneClick()');
+    this.router.navigate(['/summary']);
+  }
 }

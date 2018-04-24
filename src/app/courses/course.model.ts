@@ -1,5 +1,5 @@
 export class Course {
-    public id: number;
+    public id: string;
     public name: string;
     public length: number;
     public subject: string;
